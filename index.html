@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <img src="./assets/img_logo.png" alt="logo" class="logo">
+        <div class="nav-a-group">
+            <a href="./index.html">홈</a>
+            <a href="./place-list.html">숙소보기</a>
+            <a href="#">예약내역</a>
+            <a href="#">로그인</a>
+        </div>
+    </nav>
+    <div class="progress-bar" id="progressBar"></div>
+
+    
+    <div class="scroll-up-button">
+        <img src="./assets/ico_arrowUp.png" alt="scroll-up-button">
+    </div>
+
+    <div class="banner">
+    </div>
+
+    <div class="bottom-line">
+        <img src="./assets/img_logo.png" alt="logo" class="info-logo">
+    </div>
+
+    <div class="search">
+        <h1>여행지와 날짜만 입력하고 <br/>
+            빠르게 여행지를 검색해보세요!</h1>
+        <div class="search-setting">
+            <div class="place">
+                <h6>여행지</h6>
+                <input type="text" placeholder="여행지 검색" class="place-input">
+            </div>
+
+            <div class="day">
+                <h6>날짜</h6>
+                <span>의 일주일</span>
+            </div>
+
+            <div class="people-control">
+                <h6>인원수 설정</h6>
+                <div class="people-number-ControlBtn">
+                    <button class="btn-minus" id="minusBtn">-</button>
+                    <div class="number" id="result">1</div>
+                <button class="btn-plus" id="plusBtn">+</button>
+
+                <a href="#" class="search-play">검색
+                    <img src="./assets/ico_search.svg" alt="" class="search-icon">
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section1">
+        <div class="company-info">
+            <img src="./assets/img_info1.png" alt="#" class="info-img">
+           <div class="info-text">
+            <h1>숙박 여정의 불편함을 해결하고 <br/>
+                신뢰할 수 있는 숙소 환경을 구축하는 숙박 플랫폼</h1>
+                <p class="info-desc">
+                    국내 숙박, 레저, 공간대여, 국내/해외 항공권, 맛집 등 여행에 필요한 전 과정을 <br />
+                    여기어때를 통해 한 번에 준비해보세요!
+                </p>
+           </div>
+        </div>
+        <div class="company-info">
+            <img src="./assets/img_info2.png" alt="#" class="info-img">
+           <div class="info-text2">
+            <h1 class="align-left">전국 호텔, 펜션, 모텔부터 워터파크, <Br/>
+                놀이공원, 아쿠아리움까지 최저가 할인 예약</h1>
+                <p class="info-desc align-left">
+                    여기어때만의 특별한 할인 이벤트로 <Br/>
+                전국 각지 여행을 즐겨보세요!
+                </p>
+           </div>
+        </div>
+
+    </section>
+
+    <section class="section2">
+        <h1 class="event-title">각종 이벤트를 통한 할인 쿠폰 지급</h1>
+        <div class="eventbanners">
+            <img src="./assets/img_eventbanner1.png" alt="" class="main-banner">
+            <img src="./assets/img_eventbanner2.png" alt="" class="sub-banner-left">
+            <img src="./assets/img_eventbanner3.png" alt="" class="sub-banner-right">
+        </div>
+        <a href="./place-list.html">숙소 보러가기</a>
+    </section>
+
+    <footer>
+        <p>
+            회사소개 | 이용약관 | 개인정보처리방침 | 소비자 분쟁해결 기준 | 사업자 정보확인 <br />
+여기어때 마케팅센터 | 액티비티 호스트센터 | HOTEL 여기어때 | 콘텐츠산업진흥법에의한 표시 <br />
+<br />
+<br />
+            고객행복센터 1670-6250오전 9시 - 새벽 3시 <br />
+            <br />
+            (주) 여기어때컴퍼니 <br />
+주소 : 서울특별시 강남구 봉은사로 479, 479타워 11층 | 대표이사 : 정명훈 | 사업자등록번호: 742-86-00224 <br />
+통신판매번호 : 2017-서울강남-01779 | 관광사업자 등록번호: 제1026-24호 | 전화번호 : 1670-6250 | 전자우편주소 : help@goodchoice.kr <br />
+(주) 여기어때컴퍼니는 통신판매중개자로서 통신판매의 당사자가 아니며, 상품의 예약, 이용 및 환불 등과 관련한 의무와 책임은 각 판매자에게 있습니다. <br />
+<br />
+Copyright GC COMPANY Corp. All rights reserved.
+
+        </p>
+
+    </footer>
+
+    <script>
+        const minusButton = document.getElementById('minusBtn')
+        const plusButton = document.getElementById('plusBtn')
+        const result = document.getElementById('result')
+
+        const bodyTag = document.querySelector("body");
+        const progressBar1 = document.getElementById('progressBar');
+
+    document.addEventListener("scroll", function () {
+        const pixels = window.pageYOffset
+        const pageHeight = bodyTag.getBoundingClientRect().height
+        const totalScrollableDistance = pageHeight - window.innerHeight
+        
+        const percentage = pixels / totalScrollableDistance
+        
+        progressBar1.style.width = `${100 * percentage}%`
+    })
+
+        let number = 1;
+
+        plusButton.addEventListener("click", function(){
+            number = number + 1;
+            result.innerHTML = number;
+            console.log("plus!")
+        })
+
+        minusButton.addEventListener("click", function(){
+            number = number - 1;
+            result.innerHTML = number;
+            console.log("plus!")
+        })
+
+
+// const animatedTags = document.querySelectorAll("company-info")
+const animatedTags = document.querySelectorAll("h1, h2, h3, p, section.img, img")
+
+animatedTags.forEach(tag => {
+    tag.style.opacity = "0";
+})
+
+document.addEventListener("scroll", function(){
+
+    let delay = 0.15;
+
+    animatedTags.forEach(tag=>{
+        const tagTop = tag.getBoundingClientRect().top;
+        const tagBottom = tag.getBoundingClientRect().bottom;
+        if(tagTop < window.innerHeight && tagBottom > 0){
+            tag.style.animation = `fadeIn 1s ${delay}s both`
+            console.log("appear");
+            delay +=0.30;
+        }else{
+            tag.style.animation = "0";
+            console.log("hide");
+        }
+    })
+
+
+})
+
+    </script>
+</body>
+</html>
